@@ -12,7 +12,7 @@ $redirectURL ='http://localhost:8888/CONGOOGLE/index.php';
 $client = new Google_Client();
 $client->setClientID($clientID);
 $client->setClientSecret($clientSecret);
-$client->setRedirectURL($redirectURL);
+$client->setRedirectURi($redirectURL);
 $client->addScope('profile');
 $client->addScope('email');
 
