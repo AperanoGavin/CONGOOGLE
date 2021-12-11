@@ -16,9 +16,21 @@ $client->setRedirectURi($redirectURL);
 $client->addScope('profile');
 $client->addScope('email');
 
- if(isset($_GET['code'])){
+  if(isset($_GET['code'])){
+     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+     $client->setAccessToken($token);
+
+     //Getting user profile information
+
+     $gauth = new Google_Service_Oauth2($client);
+     $google_info = $gauth->userinfo->get();
+     $email= $google_info->email;
+     $name= $google_info->name;
+
+     echo"welcome ".$name." yours email is :".$email;
+
      
  }else{
      echo "<a href='".$client->createAuthUrl()."'>Login with Google</a>" ;
  }
-?>
+
