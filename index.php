@@ -6,17 +6,17 @@ require_once __DIR__ . '/composer/autoload_real.php';
 
 $clientID = '365618096866-keg1924b8fsl8656jmk7mcmqf8acviqg.apps.googleusercontent.com';
 $clientSecret ='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';
-$redirectURL ='http://localhost/CONGOOGLE/index.php';
+$redirectURl ='http://localhost/CONGOOGLE/index.php';
 
 //create client request to google
 $client = new Google_Client();
 $client->setClientID($clientID);
 $client->setClientSecret($clientSecret);
-$client->setRedirectURi($redirectURL);
+$client->setRedirectURi($redirectURl);
 $client->addScope('profile');
 $client->addScope('email');
 
-  if(isset($_GET['code'])){
+ if(isset($_GET['code'])){
      $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
      $client->setAccessToken($token);
 
@@ -33,4 +33,5 @@ $client->addScope('email');
  }else{
      echo "<a href='".$client->createAuthUrl()."'>Login with Google</a>" ;
  }
+
 
