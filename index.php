@@ -6,7 +6,7 @@ require_once __DIR__ . '/composer/autoload_real.php';
 
 $clientID = '365618096866-keg1924b8fsl8656jmk7mcmqf8acviqg.apps.googleusercontent.com';
 $clientSecret ='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';
-$redirectURL ='http://localhost:8888/CONGOOGLE/index.php';
+$redirectURL ='http://localhost/CONGOOGLE/index.php';
 
 //create client request to google
 $client = new Google_Client();
